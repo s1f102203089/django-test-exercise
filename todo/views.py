@@ -41,13 +41,3 @@ def delete(request, task_id):
         raise Http404('Task does not exist')
     task.delete()
     return redirect(index)
-
-
-def close(requset, task_id):
-    try:
-        task = Task.objects.get(pk=task_id)
-    except Task.DoexNotExist:
-        raise Http404('Task does not exist')
-    task.completed = True
-    task.save()
-    return redirect(index)
