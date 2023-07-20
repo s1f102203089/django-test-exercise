@@ -43,7 +43,7 @@ def delete(request, task_id):
     return redirect(index)
 
 
-def close(requset,task_id):
+def close(requset, task_id):
     try:
         task = Task.objects.get(pk=task_id)
     except Task.DoexNotExist:
