@@ -49,4 +49,4 @@ def close(requset, task_id):
         raise Http404('Task does not exist')
     task.completed = True
     task.save()
-    return redirect
+    return redirect(index)
